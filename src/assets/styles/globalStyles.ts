@@ -10,11 +10,16 @@ const GlobalStyles = createGlobalStyle`
         --color-copy-background: #303030;
         --color-golden: #DAC960;
         --color-text: #ffffff;
+
+        font-size: 62.5%;
+        font-family: 'Roboto';
+
      }
 
      body { 
       background-color: var( --color-primary);
-      color: var( --color-text)
+      color: var( --color-text);
+      font-size: 1.4rem;        
      }
 
 

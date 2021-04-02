@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 import { StyledContainer, StyledWrapper } from './styles';
 
 const ComponentContainer: React.FC = ({children}) => {

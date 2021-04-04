@@ -10,9 +10,10 @@ export const StyledContainer = styled.div`
 `;
 
 export const StyledWrapper = styled.div`
-width: 90%;
-max-width: 1000px;
+  width: 90%;
+  max-width: 1000px;
 
-display: flex;
+  display: flex;
+  justify-content: center;
   
 `

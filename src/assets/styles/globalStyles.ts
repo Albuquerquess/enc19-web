@@ -20,7 +20,16 @@ const GlobalStyles = createGlobalStyle`
       background-color: var( --color-primary);
       color: var( --color-text);
       font-size: 1.4rem;        
+
      }
+
+     a {
+		font-size: inherit;
+		text-decoration: none;
+		color: var(--color-text)
+
+	}
+
 
 
 

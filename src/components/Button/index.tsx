@@ -11,11 +11,11 @@ interface butonProps {
 }
 
 const Button: React.FC<butonProps> = ({label, goTo, golden, gray, ...props}) => {
-  return <Link to={goTo}>
-  <StyledButtom golden {...props}>
+  return <StyledButtom golden {...props}>
+    <Link to={goTo}>
       {label}
+    </Link>
   </StyledButtom>
-  </Link>;
 }
 
 export default Button;

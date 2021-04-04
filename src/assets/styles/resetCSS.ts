@@ -20,6 +20,7 @@ const ResetCSS = createGlobalStyle`
 		font-size: 100%;
 		font: inherit;
 		vertical-align: baseline;
+		font-family: 'Roboto';
 	}
 	/* HTML5 display-role reset for older browsers */
 	article, aside, details, figcaption, figure,
@@ -47,32 +48,33 @@ const ResetCSS = createGlobalStyle`
 	button {
 
 	border: none;
-		margin: 0;
-		padding: 0;
-		width: auto;
-		overflow: visible;
+	margin: 0;
+	padding: 0;
+	width: auto;
+	overflow: visible;
 
-		background: transparent;
+	background: transparent;
 
-		/* inherit font & color from ancestor */
-		font: inherit;
-		font-weight: 700;
+	/* inherit font & color from ancestor */
+	font: inherit;
+	font-weight: 700;
 
-		/* Normalize 'line-height'. Cannot be changed from 'normal' in Firefox 4+. */
-		line-height: normal;
+	/* Normalize 'line-height'. Cannot be changed from 'normal' in Firefox 4+. */
+	line-height: normal;
 
-		/* Corrects font smoothing for webkit */
-		-webkit-font-smoothing: inherit;
-		-moz-osx-font-smoothing: inherit;
+	/* Corrects font smoothing for webkit */
+	-webkit-font-smoothing: inherit;
+	-moz-osx-font-smoothing: inherit;
 
-		/* Corrects inability to style clickable 'input' types in iOS */
-		-webkit-appearance: none;
+	/* Corrects inability to style clickable 'input' types in iOS */
+	-webkit-appearance: none;
 	/* Remove excess padding and border in Firefox 4+ */
 	&::-moz-focus-inner {
 		border: 0;
 		padding: 0;
 	}
 	}
+
 
 
 `

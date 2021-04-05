@@ -8,8 +8,8 @@ import ResetCSS from './assets/styles/resetCSS'
 
 ReactDOM.render(
   <React.StrictMode>
-    <GlobalStyles />
     <ResetCSS />
+    <GlobalStyles />
       <App />
   </React.StrictMode>,
   document.getElementById('root')

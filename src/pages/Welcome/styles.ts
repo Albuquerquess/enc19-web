@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const WelcomeMain = styled.div`
-  width: 100%;
+  width: 90%;
   height: 100vh;
 
   display: flex;
@@ -28,7 +28,7 @@ export const WelcomeMain = styled.div`
 
   button {
     width: 100%;
-    height: 5rem;
+    height: 6rem;
   }
 
   span#CTAcadastro {
@@ -36,7 +36,7 @@ export const WelcomeMain = styled.div`
     bottom: 2rem;
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: var(--breakpoint-mobile)) {
     width: 50%;
   }
 `;

@@ -7,10 +7,14 @@ interface  styleButtonProps {
 
 export const StyledButtom = styled.button<styleButtonProps>`
   a {
-    width: 100%;
-    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 1.8rem;
-    color: var(--color-primary)
+    color: var(--color-primary);
+    
+    widows: 100%;
+    height: 100%;
   }
   width: 100%;
   height: auto;

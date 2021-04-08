@@ -15,6 +15,7 @@ export const StyledWrapper = styled.div`
   max-width: 700px;
 
   display: flex;
+  flex-direction: column;
   justify-content: center;
   
 `

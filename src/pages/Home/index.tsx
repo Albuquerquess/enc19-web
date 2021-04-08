@@ -22,6 +22,9 @@ const Home: React.FC = () => {
         <Background>
           Eita
         </Background>
+        <Background>
+          Ex eiusmod magna velit in duis fugiat. Quis id pariatur ipsum reprehenderit consectetur quis occaecat. In culpa nisi veniam id fugiat in commodo nisi mollit sunt. Est excepteur id id nisi est excepteur et. Laboris magna fugiat est Lorem nulla cupidatat deserunt nisi labore. Consectetur in sit proident laboris officia esse magna irure duis. Voluptate ad consequat occaecat nostrud proident fugiat deserunt occaecat.
+        </Background>
       </Box>
   </Container>
 }

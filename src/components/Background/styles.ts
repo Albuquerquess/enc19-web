@@ -11,5 +11,6 @@ export const BackgroundContainer = styled.div`
 	background: var(--color-secondary);
 
 	padding: 1rem 0;
+	margin: 1rem 0;
 	border-radius: .5rem;
 `;

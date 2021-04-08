@@ -3,7 +3,7 @@ import React from 'react';
 
 import { StyledContainer, StyledWrapper } from './styles';
 
-const ComponentContainer: React.FC = ({children}) => {
+const Container: React.FC = ({children}) => {
   return <StyledContainer>
     <StyledWrapper>
       {children}
@@ -11,4 +11,4 @@ const ComponentContainer: React.FC = ({children}) => {
   </StyledContainer>;
 }
 
-export default ComponentContainer;
+export default Container;

@@ -7,11 +7,12 @@ export const StyledContainer = styled.div`
   display: flex;
   
   justify-content: center;
+
 `;
 
 export const StyledWrapper = styled.div`
   width: 90%;
-  max-width: 1000px;
+  max-width: 700px;
 
   display: flex;
   justify-content: center;

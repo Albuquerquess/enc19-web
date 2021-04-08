@@ -22,6 +22,11 @@ const ResetCSS = createGlobalStyle`
 		vertical-align: baseline;
 		font-family: 'Roboto';
 	}
+
+	a, a:hover {
+		text-decoration: none;
+		text-transform: none;
+	}
 	/* HTML5 display-role reset for older browsers */
 	article, aside, details, figcaption, figure,
 	footer, header, hgroup, menu, nav, section {

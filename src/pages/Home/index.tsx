@@ -1,12 +1,12 @@
 import React from 'react';
-import ComponentContainer from '../../components/Container';
+import Container from '../../components/Container';
 
 // import { Container } from './styles';
 
 const Home: React.FC = () => {
-  return <ComponentContainer>
+  return <Container>
       
-  </ComponentContainer>
+  </Container>
 }
 
 export default Home;

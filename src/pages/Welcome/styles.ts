@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import breakpoints from '../../assets/styles/breakpoints'
 
 export const WelcomeMain = styled.div`
   width: 100%;
@@ -36,7 +37,7 @@ export const WelcomeMain = styled.div`
     bottom: 2rem;
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width:${breakpoints.mobile}) {
     width: 50%;
   }
 `;

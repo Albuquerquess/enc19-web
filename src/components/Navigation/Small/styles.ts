@@ -12,7 +12,7 @@ export const NavigationContainer = styled.div<NavigationContainerProps>`
   display: none;
   align-items: center;
   justify-content: space-between;
-  margin-top: .5rem;
+  margin-top: 1rem;
 
   img {
       width: 2rem;

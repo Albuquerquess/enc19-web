@@ -1,17 +1,19 @@
 import styled from 'styled-components';
 import breakpoints from '../../../assets/styles/breakpoints';
+import zIndex from '../../../assets/styles/z-index';
 import pageWidthNavigation from '../../../utils/pageWIthNavigation';
 
-interface NavigationContainerProps {
+interface StyleNavigationContainerProps {
     currentPathName: string
   }
 
-export const NavigationContainer = styled.div<NavigationContainerProps>`
+export const NavigationContainer = styled.div<StyleNavigationContainerProps>`
     width: 100%;
     display: none;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    
     
 
     span#navigation-title {

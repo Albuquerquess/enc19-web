@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
-export const CardContainer = styled.div`
+
+
+export const CardContainer = styled.div<React.HTMLAttributes<HTMLElement>>`
   display: flex;
   flex-direction: row;
   width: 100%;

@@ -29,7 +29,7 @@ export const NavigationContainer = styled.div<StyleNavigationContainerProps>`
         display: flex;
         justify-content: space-evenly;
         img { 
-            height: 1.8rem;
+            height: 2rem;
             width: auto;
         }
     }

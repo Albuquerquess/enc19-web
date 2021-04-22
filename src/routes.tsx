@@ -7,14 +7,25 @@ import WelcomePage from './pages/Welcome'
 // Not found
 import NotFound from './pages/NotFound';
 
+// navigations
+import NavigationSmall from './components/Navigation/Small';
+import NavigationMedium from './components/Navigation/Medium';
+
+// Footer
+import Footer from './components/Footer/Medium';
+
+
 const Routes: React.FC = () => {
   return (
     <BrowserRouter>
+      <NavigationSmall />
+      <NavigationMedium />
       <Switch>
         <Route exact path="/" component={WelcomePage}/>
         <Route exact path="/home" component={Home}/>
         <Route exact path="*" component={NotFound} />
       </Switch>
+      <Footer />
     </BrowserRouter>
   );
 }

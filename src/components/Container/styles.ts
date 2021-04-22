@@ -7,6 +7,8 @@ export const StyledContainer = styled.div`
   display: flex;
   
   justify-content: center;
+  align-items: center;
+
 `;
 
 export const StyledWrapper = styled.div`
@@ -14,6 +16,8 @@ export const StyledWrapper = styled.div`
   max-width: 1000px;
 
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   
 `

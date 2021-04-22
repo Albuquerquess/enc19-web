@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import breakpoints from '../../assets/styles/breakpoints'
 
 export const WelcomeMain = styled.div`
   width: 90%;
@@ -36,9 +37,12 @@ export const WelcomeMain = styled.div`
     bottom: 2rem;
   }
 
+<<<<<<< HEAD
   @media screen and (min-width: var(--breakpoint-mobile)) {
     width: 50%;
   }
+=======
+>>>>>>> feat/home
 `;
 
 

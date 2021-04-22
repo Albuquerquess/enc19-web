@@ -28,12 +28,11 @@ const GlobalStyles = createGlobalStyle`
 		font-size: inherit;
 		text-decoration: none;
 		color: var(--color-text)
-
 	}
 
-
-
-
+    .on-modal-active {
+        overflow: hidden
+    }
 
 `
 

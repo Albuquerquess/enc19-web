@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+  <g id="Grupo_89" data-name="Grupo 89" transform="translate(-314 -20)">
+    <path id="Caminho_428" data-name="Caminho 428" d="M15,0A15,15,0,1,1,0,15,15,15,0,0,1,15,0Z" transform="translate(314 20)" fill="#dac960"/>
+    <g id="Layer_2" data-name="Layer 2" transform="translate(317 23)">
+      <g id="menu-2">
+        <rect id="Retângulo_481" data-name="Retângulo 481" width="24" height="24" transform="translate(24 24) rotate(180)" opacity="0"/>
+        <circle id="Elipse_13" data-name="Elipse 13" cx="1" cy="1" r="1" transform="translate(3 11)"/>
+        <rect id="Retângulo_482" data-name="Retângulo 482" width="14" height="2" rx="0.94" transform="translate(7 11)"/>
+        <rect id="Retângulo_483" data-name="Retângulo 483" width="18" height="2" rx="0.94" transform="translate(3 16)"/>
+        <rect id="Retângulo_484" data-name="Retângulo 484" width="18" height="2" rx="0.94" transform="translate(3 6)"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -13,6 +13,8 @@ export const NavigationContainer = styled.div<StyleNavigationContainerProps>`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+
+    margin-top: 1rem;
     
     
 

@@ -11,6 +11,10 @@ import NotFound from './pages/NotFound';
 import NavigationSmall from './components/Navigation/Small';
 import NavigationMedium from './components/Navigation/Medium';
 
+// Footer
+import Footer from './components/Footer/Medium';
+
+
 const Routes: React.FC = () => {
   return (
     <BrowserRouter>
@@ -21,6 +25,7 @@ const Routes: React.FC = () => {
         <Route exact path="/home" component={Home}/>
         <Route exact path="*" component={NotFound} />
       </Switch>
+      <Footer />
     </BrowserRouter>
   );
 }

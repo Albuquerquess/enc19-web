@@ -10,6 +10,7 @@ const GlobalStyles = createGlobalStyle`
         --color-copy-background: #303030;
         --color-golden: #DAC960;
         --color-text: #ffffff;
+        --color-text-gray: #9B9B9B;
 
         font-size: 62.5%;
         font-family: 'Roboto';

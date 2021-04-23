@@ -1,9 +1,10 @@
 import styled from 'styled-components';
+import breakpoints from '../../../assets/styles/breakpoints';
 
 export const FooterContainer = styled.div`
   width: 100vw;
 
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -98,5 +99,9 @@ export const FooterContainer = styled.div`
         }
       }
     }
+  }
+
+  @media screen and (min-width: ${breakpoints.mobile}) {
+    display: flex
   }
 `;

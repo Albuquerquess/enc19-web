@@ -9,7 +9,7 @@ import twitter from '../../../assets/Footer/twitter.svg'
 
 import { FooterContainer } from './styles';
 
-const Footer: React.FC = () => {
+const FooterMedium: React.FC = () => {
   return <FooterContainer>
       <div id="footer">
         <div id="col-1">
@@ -50,4 +50,4 @@ const Footer: React.FC = () => {
   
 }
 
-export default Footer;
+export default FooterMedium;

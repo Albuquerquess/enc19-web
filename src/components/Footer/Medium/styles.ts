@@ -14,7 +14,7 @@ export const FooterContainer = styled.div`
 
   div#footer {
     width: 100%;
-    max-width: 1000px;
+    max-width: 700px;
     
     display: flex;
     flex-direction: row;
@@ -38,7 +38,7 @@ export const FooterContainer = styled.div`
       display: flex;
       align-items: flex-start;
       text-align: left;
-      font-size: small;
+      
       img {
         width: 8rem;
         margin-bottom: .5rem;

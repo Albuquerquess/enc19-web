@@ -13,7 +13,7 @@ export const StyledContainer = styled.div`
 
 export const StyledWrapper = styled.div`
   width: 90%;
-  max-width: 1000px;
+  max-width: 700px;
 
   display: flex;
   flex-direction: column;

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import breakpoints from '../../../assets/styles/breakpoints';
 
 export const FooterContainer = styled.div`
-  width: 100vw;
+  width: 100%;
 
   display: none;
   flex-direction: column;
@@ -14,7 +14,7 @@ export const FooterContainer = styled.div`
 
   div#footer {
     width: 100%;
-    max-width: 1000px;
+    max-width: 700px;
     
     display: flex;
     flex-direction: row;
@@ -87,7 +87,7 @@ export const FooterContainer = styled.div`
     
     div#wrapper {
       width: 100%;
-      max-width: 1000px;
+      max-width: 700px;
 
       display: flex;
       justify-content: space-between;

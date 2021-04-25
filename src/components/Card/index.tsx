@@ -26,7 +26,7 @@ const Card: React.FC<cardProps> = ({ image, title, description, modal }) => {
 
       <div id="content">
           <p id="content-title" >{title}</p>
-          <p>{description}</p>
+          <p id="content-description">{description}</p>
       </div>
   
   </CardContainer>

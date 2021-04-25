@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import breakpoints from '../../../assets/styles/breakpoints';
-import zIndex from '../../../assets/styles/z-index';
 import pageWidthNavigation from '../../../utils/pageWIthNavigation';
 
 interface StyleNavigationContainerProps {
@@ -20,7 +19,7 @@ export const NavigationContainer = styled.div<StyleNavigationContainerProps>`
 
     span#navigation-title {
         font-weight: 700;
-        font-size: 1.8rem;
+        font-size: 3rem;
     }
     nav#navigation-icon-group {
         width: 60%;
@@ -29,7 +28,7 @@ export const NavigationContainer = styled.div<StyleNavigationContainerProps>`
         display: flex;
         justify-content: space-evenly;
         img { 
-            height: 2rem;
+            height: 3rem;
             width: auto;
         }
     }

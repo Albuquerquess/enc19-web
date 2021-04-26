@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import breakpoints from '../../../assets/styles/breakpoints';
 
 export const FooterContainer = styled.div`
-  width: 100%;
+  width: 100vw;
 
   display: none;
   flex-direction: column;
@@ -20,7 +20,7 @@ export const FooterContainer = styled.div`
     flex-direction: row;
     align-items: center;
 
-    padding-top: 1rem;
+    padding: 2rem 0;
 
     div#col-1, div#col-2, div#col-3 {
       width: 33%;
@@ -32,6 +32,10 @@ export const FooterContainer = styled.div`
       align-items: center;
       justify-content: center;
       flex-direction: column;
+    }
+
+    div#col-2, div#col-3 {
+      font-size: 12px
     }
 
     div#col-1 {
@@ -46,12 +50,13 @@ export const FooterContainer = styled.div`
 
       p#desc {
         width: 90%;
+        font-size: 10px;
       }
 
       div#social-media {
         margin-top: 1rem;
         img {
-          width: 27px;
+          width: 1.5rem;
           height: auto;
           margin-right: 1rem;
         }        
@@ -92,6 +97,8 @@ export const FooterContainer = styled.div`
       display: flex;
       justify-content: space-between;
       font-size: small;
+
+      font-size: 8px;
 
       div#developers {
         span:first-child {

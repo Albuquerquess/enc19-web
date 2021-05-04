@@ -7,14 +7,17 @@ import logo from '../../../assets/common/logo/logo branco.svg'
 import facebook from '../../../assets/Footer/facebook.svg'
 import instagram from '../../../assets/Footer/instagram.svg'
 import twitter from '../../../assets/Footer/twitter.svg'
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 
 const FooterSmall: React.FC = () => {
-  return <FooterContainer>
+
+  const currentPathName = useLocation().pathname
+    
+  return <FooterContainer currentPathName={currentPathName}>
       <div id="footer-wrapper">
         <div id="social-media">
-            <span id="title">Mantenha-se conectado conosco!</span>
+            <span className="title">Mantenha-se conectado conosco!</span>
             <span id="icons">
                 <img src={facebook} alt="Facebook" />
                 <img src={instagram} alt="Instagram" />
@@ -25,19 +28,19 @@ const FooterSmall: React.FC = () => {
             <img id="footer-logo" src={logo} alt="ENC19"/>
             <hr/>
             <div id="contacts">
-                <span id="title">Contatos</span>
+                <strong className="title">Contatos</strong>
                 <span id="contact" >Design: johnw3s@gmail.com</span>
                 <span id="contact" >Programador: contato@albuquerquedev.com.br</span>
                 <span id="contact" >Geógrafo: leandrolimaisf@gmail.com</span>
             </div>
             <div id="utils">
-                <span id="title">Links úteis</span>
+                <strong className="title">Links úteis</strong>
                 <a href="#" id="link" >Integrasus</a>
                 <a href="#" id="link" >Ministério da Saúde</a>
                 <a href="#" id="link" >IFCE Iguatú</a>
             </div>
             <div id="suggestions">
-                <span id="title">Sujestões</span>
+                <strong className="title">Sujestões</strong>
                 <a href="#" id="suggestion" >Sugerir análise</a>
                 <a href="#" id="suggestion" >Sugerir funcionalidade</a>
             </div>

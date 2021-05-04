@@ -1,23 +1,29 @@
 import styled from 'styled-components';
 import breakpoints from '../../../assets/styles/breakpoints';
+import pageFooterless from '../../../utils/pageFooterless';
+import pageWidthNavigation from '../../../utils/pageWIthNavigation';
 
-export const FooterContainer = styled.div`
+interface FooterContainerProps {
+    currentPathName: string
+}
+
+export const FooterContainer = styled.div<FooterContainerProps>`
     width: 100vw;
 
-    display: flex;
+    display: ${props => pageFooterless.includes(props.currentPathName) ? 'none' : 'flex'};
     flex-direction: column;
     align-items: center;
     
     text-align: center;
     color: var(--color-text-gray);
-    font-size: .8rem;
+    font-size: 1.4rem;
 
     a {
         color: var(--color-text-gray);
     }
 
     div#footer-wrapper {
-        width: 100%;
+        width: 100%;flex
 
         span#title {
             margin: 1rem 0;
@@ -38,7 +44,7 @@ export const FooterContainer = styled.div`
 
             background-color: var(--color-secondary);
 
-            & > span#title {
+            span.title {
                 color: var(--color-text-gray);
                 font-weight: normal;
                 margin-bottom: .5rem;
@@ -58,22 +64,30 @@ export const FooterContainer = styled.div`
         div#footer {
             margin-top: 1rem;
 
+            strong.title {
+                color: var(--color-text);
+                margin-bottom: 1rem;
+                font-size: 1.8rem;
+            }
+
             img#footer-logo {
-                width: 10rem;
+                width: 12rem;
             }
 
             hr {
-                width: 35%;
+                width: 20%;
                 border-color: var(--color-golden);
+                margin-bottom: 2rem;
             }
 
             div#contacts, div#utils, div#suggestions {
                 display: flex;
                 flex-direction: column;
+                margin-bottom: 2rem;
             }
 
             div#contacts > span#contact, div#utils > a#link, div#suggestions > a#suggestion  {
-                margin-bottom: .2rem;
+                margin-bottom: .5rem;
             }
 
             
@@ -89,9 +103,11 @@ export const FooterContainer = styled.div`
         }
     }
 
+    /* Finalizar reconstrução do footer de grandes telas, refatorar Modal e ir para /explorar */
 
 
-  @media screen and (min-width: ${breakpoints.mobile}) {
+
+  @media screen and (min-width: ${breakpoints.tablet}) {
     display: none
   }
 `;

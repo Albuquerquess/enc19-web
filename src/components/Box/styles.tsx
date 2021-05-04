@@ -19,11 +19,12 @@ export const BoxContainer = styled.div<styleBoxProps>`
   }
 
   span#box-title {
-    font-size: 1.6rem;
+    font-size: 2.8rem;
     margin-bottom: 1rem;
   }
 
   span#box-subtitle {
+    font-size: 2rem;
     color: var(--color-golden);
     margin-bottom: ${props => props.withSubtitle && '1rem'};
   }

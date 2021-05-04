@@ -2,7 +2,7 @@ import React from 'react';
 import { BoxContainer } from './styles';
 
 interface boxProps {
-  title: string;
+  title?: string;
   subtitle?: string;
 }
 

@@ -1,10 +1,15 @@
 import styled from 'styled-components';
 import breakpoints from '../../../assets/styles/breakpoints';
+import pageFooterless from '../../../utils/pageFooterless';
 
-export const FooterContainer = styled.div`
+interface FooterContainerProps {
+  currentPathName: string
+}
+
+export const FooterContainer = styled.div<FooterContainerProps>`
   width: 100vw;
 
-  display: none;
+  display: ${props => pageFooterless.includes(props.currentPathName) ? 'none' : 'flex'};
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -12,9 +17,11 @@ export const FooterContainer = styled.div`
   
   background-color: var(--color-secondary);
 
+  
+
   div#footer {
     width: 100%;
-    max-width: 700px;
+    max-width: var(--size-container);
     
     display: flex;
     flex-direction: row;
@@ -34,44 +41,45 @@ export const FooterContainer = styled.div`
       flex-direction: column;
     }
 
-    div#col-2, div#col-3 {
-      font-size: 12px
-    }
-
     div#col-1 {
       display: flex;
       align-items: flex-start;
       text-align: left;
       
       img {
-        width: 8rem;
-        margin-bottom: .5rem;
+        width: 12rem;
+        margin-bottom: 1.5rem;
       }
 
       p#desc {
         width: 90%;
-        font-size: 10px;
+        font-size: 1.4rem;
       }
 
       div#social-media {
-        margin-top: 1rem;
+        margin-top: 2rem;
         img {
-          width: 1.5rem;
+          width: 3rem;
           height: auto;
-          margin-right: 1rem;
+          margin-right: 2rem;
         }        
       }
     }
 
+    div#col-2, div#col-3 {
+      font-size: 2rem;
+    }
+
+
     div#col-2 {
       ol li {
-        padding-bottom: 1rem
+        margin-bottom: 2rem
       }
     }
 
     div#col-3 {
       display: flex;
-      align-items: flex-end;
+      align-items: center;
       justify-content: center;
       span {
         padding-bottom: 1rem
@@ -88,17 +96,17 @@ export const FooterContainer = styled.div`
 
     background-color: var(--color-copy-background);
 
-    padding: 1rem 0;
+    padding: 1rem 0;  
     
     div#wrapper {
       width: 100%;
-      max-width: 700px;
+      max-width: var(--size-container);
 
       display: flex;
       justify-content: space-between;
       font-size: small;
 
-      font-size: 8px;
+      font-size: 1.4rem;
 
       div#developers {
         span:first-child {
@@ -108,7 +116,7 @@ export const FooterContainer = styled.div`
     }
   }
 
-  @media screen and (min-width: ${breakpoints.mobile}) {
-    display: flex
+  @media screen and (max-width: ${breakpoints.mobile}) {
+    display: none
   }
 `;

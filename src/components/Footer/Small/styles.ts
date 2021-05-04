@@ -107,7 +107,7 @@ export const FooterContainer = styled.div<FooterContainerProps>`
 
 
 
-  @media screen and (min-width: ${breakpoints.tablet}) {
+  @media screen and (min-width: ${breakpoints.mobile}) {
     display: none
   }
 `;

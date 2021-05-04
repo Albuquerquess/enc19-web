@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 // ASSET
 import logo from '../../../assets/common/logo/logo branco.svg'
@@ -10,7 +10,10 @@ import twitter from '../../../assets/Footer/twitter.svg'
 import { FooterContainer } from './styles';
 
 const FooterMedium: React.FC = () => {
-  return <FooterContainer>
+
+  const currentPathName = useLocation().pathname
+
+  return <FooterContainer currentPathName={currentPathName}>
       <div id="footer">
         <div id="col-1">
             <img src={logo} alt="ENC19"/>

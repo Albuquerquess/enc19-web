@@ -1,24 +1,20 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Button from '../../components/Button';
-import Container from '../../components/Container'
-import Logo from "../../components/Logo";
+import Logo from '../../assets/common/logo/logo branco.svg';
 
-import { WelcomeMain } from './styles';
+import { WelcomeContainer, WelcomeMain, CTA } from './styles';
 
 const Welcome: React.FC = () => {
-  return <Container>
+  return <WelcomeContainer>
     <WelcomeMain>
-      <div id="logo-button-wrapper">
-        <Logo />
-        <hr />
-        <Button label="Entrar" goTo="/home"/>
-      </div>
-      <span id="CTAcadastro">
-          Novo aqui? <Link to="/cadastro"><strong>Cadastrar-se</strong></Link>
-      </span>
+      <img src={Logo} alt="Logo"/>
+      <hr />
+      <Button label="ENTRAR" goTo="/home" active />
     </WelcomeMain>
-  </Container>
+    <CTA>
+      <span>Novo por aqui? <strong>Cadastre-se</strong></span>
+    </CTA>
+  </WelcomeContainer>;
 }
 
 export default Welcome;

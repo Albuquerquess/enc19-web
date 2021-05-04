@@ -1,48 +1,77 @@
 import styled from 'styled-components';
-import breakpoints from '../../assets/styles/breakpoints'
+import breakpoints from '../../assets/styles/breakpoints';
+
+export const WelcomeContainer = styled.div`
+  width: 100vw;
+  height: 100vh;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  overflow: hidden;
+
+`;
 
 export const WelcomeMain = styled.div`
-  width: 90%;
-  height: 100vh;
-
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  flex-direction: column;
 
-  div#logo-button-wrapper {
-    width: 100%;
-    margin-bottom: 4rem; 
+  width: 80%;
+  max-width: 400px;
 
-    display: flex;
-    flex-direction: column; 
-    align-items: center;
-    justify-content: center;
-    
-    hr {
-      width: 100%;
-      margin-top: 2rem;
-      margin-bottom: 4rem;
+  margin-bottom: 10rem;
+
+
+  img {
       
-    }
+      width: 15rem;
+  }
+
+  hr {
+      width: 100%;
+      border: 1px solid var(--color-background);
+      margin-top: 3rem;
+      margin-bottom: 4rem;
+    
   }
 
   button {
-    width: 100%;
-    height: 6rem;
+      width: 100%;
   }
 
-  span#CTAcadastro {
-    position: absolute;
-    bottom: 2rem;
-  }
+  @media screen and (min-width: ${breakpoints.tablet}) {
+    img {
+        width: 28rem;
+    }
 
-<<<<<<< HEAD
-  @media screen and (min-width: var(--breakpoint-mobile)) {
-    width: 50%;
+    hr {
+        margin-top: 4rem;
+        margin-bottom: 6rem;
+    }
+
+    button {
+        height: 7rem;
+        font-size: 3rem;
+    }
   }
-=======
->>>>>>> feat/home
 `;
 
+export const CTA = styled.span`
+    display: flex; // until the next update
+    position: fixed;
+    bottom: 3rem;
+    color: var(--color-background);
 
+    strong {
+        color: var(--color-text);
+    }
+
+    @media screen and (min-width: ${breakpoints.tablet}) {
+        font-size: 2.4rem;
+        bottom: 6rem;
+    }
+`

@@ -12,14 +12,14 @@ export const NavigationContainer = styled.div<NavigationContainerProps>`
   display: none;
   align-items: center;
   justify-content: space-between;
-  margin-top: 1rem;
+  margin-top: 3rem;
 
   img {
-      width: 2rem;
+      width: 3.2rem;
   }
   span#page-title {
       font-weight: 700;
-      font-size: 2rem
+      font-size: 3.2rem
   }
 
   @media screen and (max-width: ${breakpoints.mobile}) {

@@ -21,21 +21,25 @@ export const SidebarContainer = styled.div<sidebarProps>`
 `;
 
 export const SidebarWrapper  = styled.div<sidebarProps>`
-	transition: width .5s;
 	width: 0;
 	width: ${props => props.active && '65vw'};
+	transition: width .5s;
 
 	height: 100%;
 	background-color: var(--color-secondary);
 	text-align: right;
+	padding-top: 3rem;
+
+	
 
 	img#sidebar-close {
-		margin: 1rem 1rem 1rem 0;
+		margin-right: 2rem;
+		width: 3.2rem;
 	}
 	
 	div#sidebar-page-icons-wrapper {
 		ul {
-			margin-left: .5rem;
+			margin-left: 1rem;
 		}
 
 		ul li {
@@ -50,18 +54,18 @@ export const SidebarWrapper  = styled.div<sidebarProps>`
 			
 
 			img {
-				margin-right: .5rem;
+				margin-right: 1rem;
 			}
 
 			span {
-				font-size: 1.4rem;
+				font-size: 3rem;
 			}
 		}
 		ul > li.sidebar-page-icon {
-			margin-bottom: 1rem;
+			margin-bottom: 2rem;
 		}
 		ul > li.sidebar-page-icon > a > img {
-			width: 3rem;
+			width: 3.2rem;
 		}
 }
 

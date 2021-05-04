@@ -13,22 +13,22 @@ export const NavigationContainer = styled.div<StyleNavigationContainerProps>`
     justify-content: space-between;
     align-items: center;
 
-    margin-top: 1rem;
+    margin-top: 3rem;
     
     
 
     span#navigation-title {
         font-weight: 700;
-        font-size: 3rem;
+        font-size: 4.5rem;
     }
     nav#navigation-icon-group {
         width: 60%;
-        max-width: 340px;
+        max-width: 400px;
 
         display: flex;
         justify-content: space-evenly;
         img { 
-            height: 3rem;
+            height: 4.5rem;
             width: auto;
         }
     }

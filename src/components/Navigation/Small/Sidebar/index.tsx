@@ -24,6 +24,7 @@ interface sidebarProps {
 
 const Sidebar: React.FC<sidebarProps> = ({active, setActive}) => {
   return <SidebarContainer onClick={() => setActive(false)} active={active}>
+      
       <SidebarWrapper active={active}>
           <img src={closeSidebarIcon} id="sidebar-close" alt="FECHAR"/>
         <div id="sidebar-page-icons-wrapper">
@@ -35,25 +36,25 @@ const Sidebar: React.FC<sidebarProps> = ({active, setActive}) => {
                     </Link>
                 </li>
                 <li className="sidebar-page-icon">
-                    <Link to="/conteudo/dashboard">
+                    <Link to="/dashboard">
                         <img src={dashboardActiveIcon} alt="Home"/>
                         <span>Dashboard</span>
                     </Link>
                 </li>
                 <li className="sidebar-page-icon">
-                    <Link to="/conteudo/graficos">
+                    <Link to="/explorar/graficos">
                         <img src={graphActiveIcon} alt="Home"/>
                         <span>Gráficos</span>
                     </Link>
                 </li>
                 <li className="sidebar-page-icon">
-                    <Link to="/conteudo/infograficos">
+                    <Link to="/explorar/infograficos">
                         <img src={infographActiveIcon} alt="Home"/>
                         <span>Infográficos</span>
                     </Link>
                 </li>
                 <li className="sidebar-page-icon">
-                    <Link to="/conteudo/mapas">
+                    <Link to="/explorar/mapas">
                         <img src={mapActiveIcon} alt="Home"/>
                         <span>Mapas</span>
                     </Link>

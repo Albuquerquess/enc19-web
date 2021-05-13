@@ -12,15 +12,21 @@ const GlobalStyles = createGlobalStyle`
         --color-text: #ffffff;
         --color-text-gray: #9B9B9B;
 
+        --size-container: 1100px;
+
         font-size: 62.5%;
         font-family: 'Roboto';
 
      }
 
      body { 
-      background-color: var( --color-primary);
+      background-color: #000;
+      
       color: var( --color-text);
-      font-size: 1.4rem;        
+      
+      font-size: 1.6rem;        
+      letter-spacing: .03rem;
+      line-height: 2.4rem;
 
      }
 

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import breakpoints from '../../../assets/styles/breakpoints';
-import pageWidthNavigation from '../../../utils/pageWIthNavigation';
+import pageWidthNavigation from '../../../utils/content/pageWIthNavigation';
 
 interface StyleNavigationContainerProps {
     currentPathName: string

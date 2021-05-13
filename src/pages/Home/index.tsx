@@ -59,7 +59,6 @@ const Home: React.FC = () => {
         </Background>
       </Box>
 
-      {/* Fazer o footer */}
   </Container>
 }
 

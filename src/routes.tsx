@@ -3,7 +3,8 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 // Pages
 import Home from './pages/Home'
-import WelcomePage from './pages/Welcome'
+import Welcome from './pages/Welcome'
+import Explorar from './pages/Explorar';
 
 // Not found
 import NotFound from './pages/NotFound';
@@ -24,8 +25,9 @@ const Routes: React.FC = () => {
       <NavigationSmall />
       <NavigationMedium />
       <Switch>
-        <Route exact path="/" component={WelcomePage}/>
+        <Route exact path="/" component={Welcome}/>
         <Route exact path="/home" component={Home}/>
+        <Route exact path="/explorar/:type" component={Explorar}/>
         <Route exact path="*" component={NotFound} />
       </Switch>
       <FooterSmall />

@@ -14,6 +14,7 @@ export const CardContainer = styled.div<React.HTMLAttributes<HTMLElement>>`
 
   picture > *{
       height: 11rem;
+      border-radius: .5rem;
   }
 
   div#content {

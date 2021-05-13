@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import breakpoints from '../../../assets/styles/breakpoints';
 import pageFooterless from '../../../utils/pageFooterless';
-import pageWidthNavigation from '../../../utils/pageWIthNavigation';
+import pageWidthNavigation from '../../../utils/content/pageWIthNavigation';
 
 interface FooterContainerProps {
     currentPathName: string

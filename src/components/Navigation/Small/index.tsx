@@ -6,7 +6,7 @@ import Sidebar from './Sidebar';
 
 import { NavigationContainer } from './styles';
 
-import pageNames from '../../../utils/pageNames';
+import pageNames from '../../../utils/content/pageNames';
 import { useLocation } from 'react-router';
 
 const NavigationSmall: React.FC = () => {

@@ -1,25 +1,33 @@
 import styled from 'styled-components';
 
 interface  styleButtonProps {
-  golden?: boolean;
-  gray?: boolean
+  background?: string,
+  active?: boolean;
 }
 
 export const StyledButtom = styled.button<styleButtonProps>`
+
+  border-radius: .5rem;
+
+  background-color: var(--color-secondary);
+  background-color: ${props => props.active && '#dac960'};
+
+  /* if u want a new background color, put color on background prop */
+  background-color: ${props => props.background && props.background};
+
+  padding: 1rem;
+
+  font-size: 100%;
+  
   a {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.8rem;
-    color: var(--color-primary);
     
-    widows: 100%;
-    height: 100%;
+    color: var(--color-text);
+    color: ${props => props.active && 'var(--color-primary)' };
+    
+    width: auto;
+    height: auto;
   }
-  width: 100%;
-  height: auto;
-
-  height: auto;
-  border-radius: .5rem;
-  background-color: ${props => props.golden ? 'var(--color-golden)' : 'var(--color-secondary)'};
 `;

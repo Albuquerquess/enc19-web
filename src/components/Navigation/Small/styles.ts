@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import breakpoints from '../../../assets/styles/breakpoints';
 
-import pageWidthNavigation from '../../../utils/pageWIthNavigation'
+import pageWidthNavigation from '../../../utils/content/pageWIthNavigation'
 
 interface NavigationContainerProps {
   currentPathName: string
@@ -13,6 +13,7 @@ export const NavigationContainer = styled.div<NavigationContainerProps>`
   align-items: center;
   justify-content: space-between;
   margin-top: 3rem;
+  margin-bottom: 2rem;
 
   img {
       width: 3.2rem;

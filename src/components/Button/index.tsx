@@ -3,16 +3,17 @@ import { Link } from 'react-router-dom';
 
 import { StyledButtom } from './styles';
 
-interface butonProps {
+interface buttonProps {
     label: string;
     goTo: string;
-    golden?: boolean,
-    gray?: boolean
+    background?: string;
+    active?: boolean;
+    handleClick?: () => any;
 }
 
-const Button: React.FC<butonProps> = ({label, goTo, golden, gray, ...props}) => {
-  return <StyledButtom golden {...props}>
-    <Link to={goTo}>
+const Button: React.FC<buttonProps> = ({label, goTo, background, active, handleClick }) => {
+  return <StyledButtom background={background} active={active} key={label} onClick={handleClick}>
+    <Link to={goTo} >
       {label}
     </Link>
   </StyledButtom>

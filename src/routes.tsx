@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './pages/Home'
 import Welcome from './pages/Welcome'
 import Explorar from './pages/Explorar';
+import Dashboard from './pages/Dashboard';
 
 // Not found
 import NotFound from './pages/NotFound';
@@ -28,6 +29,7 @@ const Routes: React.FC = () => {
         <Route exact path="/" component={Welcome}/>
         <Route exact path="/home" component={Home}/>
         <Route exact path="/explorar/:type" component={Explorar}/>
+        <Route exact path="/dashboard" component={Dashboard}/>
         <Route exact path="*" component={NotFound} />
       </Switch>
       <FooterSmall />

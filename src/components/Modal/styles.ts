@@ -31,7 +31,11 @@ export const ModalContainer = styled.div<styleModalProps>`
     align-items: center;
 
     margin: 2rem 0;
-    /* overflow: scroll; */
+    overflow-y: scroll;
+
+    img {
+      width: 50%;
+    }
 
     div#modal-content {
       p#modal-content-title {

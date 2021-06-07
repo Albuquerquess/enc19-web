@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { fadeIn, fadeOut } from '../../assets/styles/fade';
-import zIndex from '../../assets/styles/z-index';
 
 interface styleModalProps {
   active: boolean

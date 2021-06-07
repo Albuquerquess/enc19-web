@@ -1,62 +1,156 @@
 import React from 'react';
 import Box from '../../components/Box';
-import Card from '../../components/Card';
 import Container from '../../components/Container';
-import fakeImage from '../../assets/Home/fakeImage.png'
-import fakeImageMobile from '../../assets/Home/fakeImage@2x.png'
 import casosConfirmados from '../../assets/Home/Casos confirmados.svg'
 import curados from '../../assets/Home/Curados.svg'
 import mortes from '../../assets/Home/Mortes.svg'
 
 import Background from '../../components/Background';
 import { LastCase } from './styles';
+import api from '../../Services/api';
+import Card from '../../components/Card';
+import axios from 'axios';
+
+interface dataProps {
+  id: number,
+  type: string,
+  category: string,
+  url: string,
+  desc: string,
+  nameWithHash: string,
+  title: string,
+}
+
+interface lastCovidDataProps {
+  confirmed: {
+    quantidade: number,
+    label: string
+  }
+  recovered: {
+    quantidade: number,
+    label: string
+  }
+  dead: {
+    quantidade: number,
+    label: string
+  }
+}
+
 
 const Home: React.FC = () => {
-  return <Container>
-      <Box title="Últimas publicações">
-        <Card
-          image={[fakeImage, fakeImageMobile]}
-          title="Mortes por gênero"
-          description="In officia adipisicing Lorem culpa. Magna culpa eiusmod enim do aliqua dolore excepteur ex voluptate duis pariatur voluptate velit sint. Voluptate do aliquip irure labore esse nostrud incididunt incididunt nulla in magna.Aute labore sint nostrud dolore consequat Lorem aliquip nostrud minim. Excepteur elit mollit cupidatat anim magna labore consequat culpa consequat laborum cupidatat. Cillum tempor sint aute cillum. Lorem tempor voluptate consequat exercitation. Nostrud mollit magna incididunt nulla cupidatat do irure ea. Id ea id ullamco et anim Lorem tempor amet nostrud Lorem.Fugiat aliqua ipsum in deserunt labore mollit proident laborum pariatur dolore irure officia ex. Consectetur ut commodo mollit laboris commodo. Est dolor ea ipsum elit proident. Ut veniam ex esse aliqua non ullamco tempor id culpa velit non officia do enim.In officia adipisicing Lorem culpa. Magna culpa eiusmod enim do aliqua dolore excepteur ex voluptate duis pariatur voluptate velit sint. Voluptate do aliquip irure labore esse nostrud incididunt incididunt nulla in magna.Aute labore sint nostrud dolore consequat Lorem aliquip nostrud minim. Excepteur elit mollit cupidatat anim magna labore consequat culpa consequat laborum cupidatat. Cillum tempor sint aute cillum. Lorem tempor voluptate consequat exercitation. Nostrud mollit magna incididunt nulla cupidatat do irure ea. Id ea id ullamco et anim Lorem tempor amet nostrud Lorem.Fugiat aliqua ipsum in deserunt labore mollit proident laborum pariatur dolore irure officia ex. Consectetur ut commodo mollit laboris commodo. Est dolor ea ipsum elit proident. Ut veniam ex esse aliqua non ullamco tempor id culpa velit non officia do enim."
-          modal
+  const [graph, setGraph] = React.useState<dataProps>({
+    id: 0,
+  type: '',
+  category: '',
+  url: '',
+  desc: '',
+  nameWithHash: '',
+  title: '',
+  })
+  const [infograph, setInfograph] = React.useState<dataProps>({
+    id: 0,
+  type: '',
+  category: '',
+  url: '',
+  desc: '',
+  nameWithHash: '',
+  title: '',
+  })
+  const [map, setMap] = React.useState<dataProps>({
+    id: 0,
+  type: '',
+  category: '',
+  url: '',
+  desc: '',
+  nameWithHash: '',
+  title: '',
+  })
+  const [allOk, setAllOk] = React.useState(false)
+  const [lastCovidData, setLastCovidData] = React.useState<lastCovidDataProps>()
 
-          />
-        <Card
-          image={[fakeImage, fakeImageMobile]}
-          title="Mortes por gênero"
-          description="In officia adipisicing Lorem culpa. Magna culpa eiusmod enim do aliqua dolore excepteur ex voluptate duis pariatur voluptate velit sint. Voluptate do aliquip irure labore esse nostrud incididunt incididunt nulla in magna.Aute labore sint nostrud dolore consequat Lorem aliquip nostrud minim. Excepteur elit mollit cupidatat anim magna labore consequat culpa consequat laborum cupidatat. Cillum tempor sint aute cillum. Lorem tempor voluptate consequat exercitation. Nostrud mollit magna incididunt nulla cupidatat do irure ea. Id ea id ullamco et anim Lorem tempor amet nostrud Lorem.Fugiat aliqua ipsum in deserunt labore mollit proident laborum pariatur dolore irure officia ex. Consectetur ut commodo mollit laboris commodo. Est dolor ea ipsum elit proident. Ut veniam ex esse aliqua non ullamco tempor id culpa velit non officia do enim."
-          modal
-          />
-        <Card
-          image={[fakeImage, fakeImageMobile]}
-          title="Mortes por gênero"
-          description="Fugiat aliqua ipsum in deserunt labore mollit proident laborum pariatur dolore irure officia ex. Consectetur ut commodo mollit laboris commodo. Est dolor ea ipsum elit proident. Ut veniam ex esse aliqua non ullamco tempor id culpa velit non officia do enim."
-          modal
-          />
-      </Box>
+  const getLatestContentOnBackend = async () => {
+    const graphResponse = await api.get('/admin/content/show/last', {
+      params: {type: 'grafico'}
+    })
+      setGraph(graphResponse.data[0])
+    const mapResponse = await api.get('/admin/content/show/last', {
+      params: {type: 'mapa'}
+    })
+      setMap(mapResponse.data[0])
+    const infographResponse = await api.get('/admin/content/show/last', {
+      params: {type: 'infografico'}
+    })
+      setInfograph(infographResponse.data[0])
+
+      setAllOk(true)
+  }
+
+  const getLastsCovidDataOnIntegrasus = async () => {
+    const confirmedCases = await axios.get('https://indicadores.integrasus.saude.ce.gov.br/api/coronavirus/qtd-confirmados?dataInicio=2020-01-01&dataFim=2021-05-14&minDate=2020-01-01&maxDate=2021-05-14&tipo=Confirmados&idMunicipio=&idRegiaoSaude=&idMacrorregiao=&casosHospitalizados=false&casosProfissionais=false&casosIndigenas=false&casosEstudante=false')
+    const recoveredCases = await axios.get('https://indicadores.integrasus.saude.ce.gov.br/api/coronavirus/qtd-recuperados?dataInicio=2020-01-01&dataFim=2021-05-14&minDate=2020-01-01&maxDate=2021-05-14&tipo=Confirmados&idMunicipio=&idRegiaoSaude=&idMacrorregiao=&casosHospitalizados=false&casosProfissionais=false&casosIndigenas=false&casosEstudante=false')
+    const deadCases = await axios.get(' https://indicadores.integrasus.saude.ce.gov.br/api/coronavirus/qtd-obitos?dataInicio=2020-01-01&dataFim=2021-05-14&minDate=2020-01-01&maxDate=2021-05-14&tipo=Confirmados&idMunicipio=&idRegiaoSaude=&idMacrorregiao=&casosHospitalizados=false&casosProfissionais=false&casosIndigenas=false&casosEstudante=false')
+    
+    setLastCovidData({
+      confirmed: {
+        quantidade: confirmedCases.data[0].quantidade,
+        label: 'Casos Confirmados'
+      },
+      dead: {
+        quantidade: deadCases.data[0].quantidade,
+        label: 'Óbitos'
+      },
+      recovered: {
+        quantidade: recoveredCases.data[0].quantidade,
+        label: 'Casos Confirmados'
+      },
+      
+    })
+  }
+  
+  React.useEffect(() => {
+    getLatestContentOnBackend()
+    getLastsCovidDataOnIntegrasus()
+  }, [])
+
+  return <Container>
+      
+        {
+          allOk && (
+            <Box title="Últimas publicações">
+              <Card image={[graph.url, graph.url]} title={graph.title} description={graph.desc} />
+              <Card image={[map.url, map.url]} title={map.title} description={map.desc} />
+              <Card image={[infograph.url, infograph.url]} title={infograph.title} description={infograph.desc} />
+            </Box>
+          )
+        }
+
 
       <Box title="Atualizações diárias">
-        <Background>
+        {
+          lastCovidData && <>
+            <Background>
           <LastCase>
             <img src={casosConfirmados} alt="CASOS CONFIRMADOS"/>
             <span className="title">Casos confirmados:</span>
-            <span className="value">100.000</span>
+            <span className="value">{lastCovidData?.confirmed.quantidade}</span>
           </LastCase>
         </Background>
         <Background>
         <LastCase>
             <img src={curados} alt="CURADOS"/>
-            <span className="title">Curados:</span>
-            <span className="value">100.000</span>
+            <span className="title">{lastCovidData?.recovered.label}</span>
+            <span className="value">{lastCovidData?.recovered.quantidade}</span>
           </LastCase>
         </Background>
         <Background>
         <LastCase>
             <img src={mortes} alt="MORTES"/>
-            <span className="title">Mortos:</span>
-            <span className="value">100.000</span>
+            <span className="title">{lastCovidData?.dead.label}</span>
+            <span className="value">{lastCovidData?.dead.quantidade}</span>
           </LastCase>
         </Background>
+          </>
+        }
       </Box>
 
   </Container>

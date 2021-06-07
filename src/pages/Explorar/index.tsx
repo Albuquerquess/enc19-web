@@ -1,11 +1,13 @@
 import React from 'react';
 import Button from '../../components/Button';
 import Container from '../../components/Container';
-
-import { ExplorerContainer, ExplorerMain } from './styles';
 import Box from '../../components/Box';
 import Card from '../../components/Card';
+
+import { ExplorerContainer, ExplorerMain } from './styles';
 import { useLocation } from 'react-router';
+
+import { useDebounce } from 'use-lodash-debounce'
 
 // ASSETS
 import LupaIcon from '../../assets/Explorer/Lupa.svg'
@@ -26,13 +28,12 @@ interface dataProps {
   title: string,
 }
 
-interface getContentOnBackendProps {
+interface getContentOnBackendByCategoryProps {
   category: String,
   type: String
 }
 
 const Explorar: React.FC = () => {
-  
   const pathname = useLocation().pathname.split('/')
   const currentType = pathname[pathname.length - 1]
   const dataOfType = explorerTypes[currentType]
@@ -40,12 +41,17 @@ const Explorar: React.FC = () => {
     
   const [page, setPage] = React.useState(1)
   const [onSearch, setOnSearch] = React.useState(false)
+  const [search, setSearch] = React.useState('')
   const [data, setData] = React.useState<dataProps[]>([])
   const [clicked, setClicked] = React.useState<String>('')
   const [title, setTitle] = React.useState<String>('')
+  const [type, setType] = React.useState<String>('')
+  const [category, setCategory] = React.useState<String>('')
+  
 
+  const debounceSearch = useDebounce(search, 1000)
 
-  const getContentOnBackend = async ({category, type}: getContentOnBackendProps) => {
+  const getContentOnBackendByCategory = async ({category, type}: getContentOnBackendByCategoryProps) => {
     setClicked(category)
     setTitle(category)
 
@@ -60,12 +66,24 @@ const Explorar: React.FC = () => {
   })  
     
 }
+  const getSearchContentOnBackend = async (search: string) => {
+    api.get('/admin/content/show/search', {
+      params: {
+        search
+      }
+    }).then(response => {
+      return setData(response.data)
+    })
+  }
   React.useEffect(() => {
     return setData([])
   }, [currentType])
+
+  React.useEffect(() => {
+    getSearchContentOnBackend(debounceSearch)
+  }, [debounceSearch])
   
   return <Container>
-    {/* Resolver questão do onClick no component Button (adicionar tipo do onClick) */}
     <ExplorerContainer numberOfCategories={numberOfCategories}>
 
       <div id="button-container">
@@ -73,8 +91,13 @@ const Explorar: React.FC = () => {
         return <Button 
           label={ String( category[0] ) }
           goTo="#" 
-          handleClick={() => getContentOnBackend({category: category[2], type: dataOfType.type[1]})}
+          handleClick={() => {
+            
+            getContentOnBackendByCategory({category: category[2], type: dataOfType.type[1]})
+          }
+          }
           active={clicked === category[2]}
+          key={index}
           />}
          )
         }
@@ -86,7 +109,9 @@ const Explorar: React.FC = () => {
         <div id="search-small">
           {onSearch ? 
           (<>
-              <input type="text" placeholder="Digite aqui" id="search-input"/>
+              <input type="text" placeholder="Digite aqui" id="search-input" value={search} 
+                onChange={({target}) => setSearch(target.value)}
+              />
               <img src={LupaIcon} alt="Clicou" onClick={() => setOnSearch(false)}/></>)
             :
             (<>
@@ -98,7 +123,9 @@ const Explorar: React.FC = () => {
         <div id="search-large">
           <span>{title || 'Escolha uma categoria a cima'}</span>
           <div id="search-lenguage-input-container">
-              <input type="text" placeholder="Digite aqui" id="search-input"/>
+              <input type="text" placeholder="Digite aqui" id="search-input" value={search} 
+                onChange={({target}) => setSearch(target.value)}
+              />
               <img src={LupaIcon} alt="Clicou" onClick={() => setOnSearch(false)}/>
           </div>
         </div>

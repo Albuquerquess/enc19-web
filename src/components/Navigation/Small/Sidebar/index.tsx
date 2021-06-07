@@ -42,19 +42,19 @@ const Sidebar: React.FC<sidebarProps> = ({active, setActive}) => {
                     </Link>
                 </li>
                 <li className="sidebar-page-icon">
-                    <Link to="/explorar/graficos">
+                    <Link to="/explorar/grafico">
                         <img src={graphActiveIcon} alt="Home"/>
                         <span>Gráficos</span>
                     </Link>
                 </li>
                 <li className="sidebar-page-icon">
-                    <Link to="/explorar/infograficos">
+                    <Link to="/explorar/infografico">
                         <img src={infographActiveIcon} alt="Home"/>
                         <span>Infográficos</span>
                     </Link>
                 </li>
                 <li className="sidebar-page-icon">
-                    <Link to="/explorar/mapas">
+                    <Link to="/explorar/mapa">
                         <img src={mapActiveIcon} alt="Home"/>
                         <span>Mapas</span>
                     </Link>

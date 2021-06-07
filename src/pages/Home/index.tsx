@@ -117,9 +117,9 @@ const Home: React.FC = () => {
         {
           allOk && (
             <Box title="Últimas publicações">
-              <Card image={[graph.url, graph.url]} title={graph.title} description={graph.desc} />
-              <Card image={[map.url, map.url]} title={map.title} description={map.desc} />
-              <Card image={[infograph.url, infograph.url]} title={infograph.title} description={infograph.desc} />
+              <Card image={[graph.url, graph.url]} title={graph.title} description={graph.desc} modal />
+              <Card image={[map.url, map.url]} title={map.title} description={map.desc} modal />
+              <Card image={[infograph.url, infograph.url]} title={infograph.title} description={infograph.desc} modal />
             </Box>
           )
         }

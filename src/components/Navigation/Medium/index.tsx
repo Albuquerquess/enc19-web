@@ -21,21 +21,34 @@ import pageNames from '../../../utils/content/pageNames';
 
 const NavigationMedium: React.FC = () => {
   const currentPathName = useLocation().pathname
-  const pageName = pageNames[currentPathName]
-    
+  console.log(currentPathName)
+  const pageName = (pageNames[currentPathName]).toLowerCase()
+  console.log(pageName)
+
   return <Container>
       <NavigationContainer currentPathName={currentPathName}>
         <span id="navigation-title">
             {pageName}
         </span>
         <nav id="navigation-icon-group">
-            <Link to="/home"><img src={pageName === 'Home' ? homeActiveIcon: homeIcon} alt="HOME" onClick={() => {}} /></Link>
-            <Link to="/explorar/infografico"><img src={pageName === 'infografico' ? infographActiveIcon: infographIcon} alt="INFOGRÁFICOS" onClick={() => {}} /></Link>
-            <Link to="/explorar/grafico"><img src={pageName === 'grafico' ? graphActiveIcon: graphIcon} alt="GRÁFICOS" onClick={() => {}} /></Link>
-            <Link to="/explorar/mapa"><img src={pageName === 'mapa' ? mapActiveIcon: mapIcon} alt="MAPAS" onClick={() => {}} /></Link>
-            <Link to="#" ><img src={pageName === 'Dashboard' ? dashboardActiveIcon: dashboardIcon} alt="DASHBOARD" onClick={() => {}} style={{cursor: 'alias'}} /></Link>
-            <Link to="/sobre"><img src={pageName === 'Sobre' ? aboutActiveIcon: aboutIcon} alt="SOBRE" onClick={() => {}} /></Link>
-
+            <Link to="/home">
+              <img src={pageName === 'home' ? homeActiveIcon: homeIcon} alt="HOME" />
+            </Link>
+            <Link to="/explorar/infografico">
+              <img src={pageName === 'infográficos' ? infographActiveIcon: infographIcon} alt="INFOGRÁFICOS" />
+            </Link>
+            <Link to="/explorar/grafico">
+              <img src={pageName === 'gráficos' ? graphActiveIcon: graphIcon} alt="GRÁFICOS" />
+            </Link>
+            <Link to="/explorar/mapa">
+              <img src={pageName === 'mapas' ? mapActiveIcon: mapIcon} alt="MAPAS" />
+            </Link>
+            <Link to="#" >
+              <img src={pageName === 'Dashboard' ? dashboardActiveIcon: dashboardIcon} alt="DASHBOARD" style={{cursor: 'alias'}} />
+            </Link>
+            <Link to="/sobre">
+              <img src={pageName === 'sobre' ? aboutActiveIcon: aboutIcon} alt="SOBRE" />
+            </Link>
         </nav>
       </NavigationContainer>
   </Container>;

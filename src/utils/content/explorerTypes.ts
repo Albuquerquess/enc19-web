@@ -1,5 +1,5 @@
 const exploreTypes: {[index: string]: {type: String[], categories: Array<String[]>}} = {
-    graficos: {
+    grafico: {
         type: ['Gráficos', 'grafico'],
         categories: [
             ['Análises sociais', 'Sociais', 'social'],
@@ -8,7 +8,7 @@ const exploreTypes: {[index: string]: {type: String[], categories: Array<String[
             ['Análises educacionais', 'Educacionais', 'educacional']
         ]
     },
-    infograficos: {
+    infografico: {
         type: ['Infográficos', 'infografico'],
         categories: [
             ['Análises sociais', 'Sociais', 'social'],
@@ -17,7 +17,7 @@ const exploreTypes: {[index: string]: {type: String[], categories: Array<String[
             ['Análises educacionais', 'Educacionais', 'educacional']
         ]
     },
-    mapas: {
+    mapa: {
         type: ['Mapas', 'mapa'],
         categories: [
             ['Socioespacial', 'Socioespacial', 'socioespacial'],

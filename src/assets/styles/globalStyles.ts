@@ -16,7 +16,7 @@ const GlobalStyles = createGlobalStyle`
 
         font-size: 62.5%;
         font-family: 'Roboto';
-
+        overflow-x: hidden;
      }
 
      body { 
@@ -39,6 +39,7 @@ const GlobalStyles = createGlobalStyle`
     .on-modal-active {
         overflow: hidden
     }
+
 
 `
 

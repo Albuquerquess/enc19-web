@@ -1,9 +1,9 @@
 const pageWidthNavigation = [
     '/home',
    '/explorar/dashboard',
-   '/explorar/graficos',
-   '/explorar/infograficos',
-   '/explorar/mapas',
+   '/explorar/grafico',
+   '/explorar/infografico',
+   '/explorar/mapa',
    '/sobre',
    '/notFound',
 ]

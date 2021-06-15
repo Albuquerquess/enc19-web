@@ -21,9 +21,9 @@ import pageNames from '../../../utils/content/pageNames';
 
 const NavigationMedium: React.FC = () => {
   const currentPathName = useLocation().pathname
-  console.log(currentPathName)
+  console.log('currentPathName -- ', currentPathName)
   const pageName = (pageNames[currentPathName]).toLowerCase()
-  console.log(pageName)
+  console.log('pageName -- ',pageName)
 
   return <Container>
       <NavigationContainer currentPathName={currentPathName}>

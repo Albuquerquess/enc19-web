@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import Welcome from './pages/Welcome'
 import Explorar from './pages/Explorar';
 import admin from './pages/Admin';
+import Sobre from './pages/Sobre';
 
 // Not found
 import NotFound from './pages/NotFound';
@@ -29,6 +30,7 @@ const Routes: React.FC = () => {
         <Route exact path="/" component={Welcome}/>
         <Route exact path="/home" component={Home}/>
         <Route exact path="/explorar/:type" component={Explorar}/>
+        <Route exact path="/sobre" component={Sobre}/>
         <Route exact path="/admin" component={admin}/>
         <Route exact path="*" component={NotFound} />
       </Switch>

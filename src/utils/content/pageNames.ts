@@ -1,4 +1,5 @@
 const pageNames: {[index: string]:any} = {
+   '/': 'Welcome',
    '/home': 'Home',
    '/dashboard': 'Dashboard',
    '/explorar/grafico': 'Gráficos',

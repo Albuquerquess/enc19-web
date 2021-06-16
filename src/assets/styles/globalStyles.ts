@@ -28,6 +28,10 @@ const GlobalStyles = createGlobalStyle`
       letter-spacing: .03rem;
       line-height: 2.4rem;
 
+      input[type=text] {
+        padding: 0 1rem;
+      }
+
      }
 
      a {

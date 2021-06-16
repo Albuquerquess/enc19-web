@@ -6,6 +6,7 @@ const pageNames: {[index: string]:any} = {
    '/explorar/infografico': 'Infográficos',
    '/explorar/mapa': 'Mapas',
    '/sobre': 'Sobre',
+   '/admin': 'Admin',
 }
 
 

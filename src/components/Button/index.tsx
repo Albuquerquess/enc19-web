@@ -9,10 +9,11 @@ interface buttonProps {
     background?: string;
     active?: boolean;
     handleClick?: () => any;
+    id?: string 
 }
 
-const Button: React.FC<buttonProps> = ({label, goTo, background, active, handleClick }) => {
-  return <StyledButtom background={background} active={active} key={label} onClick={handleClick}>
+const Button: React.FC<buttonProps> = ({label, goTo, background, active, handleClick, id }) => {
+  return <StyledButtom background={background} active={active} key={label} onClick={handleClick} id={id ? id : 'button'}>
     <Link to={goTo} >
       {label}
     </Link>

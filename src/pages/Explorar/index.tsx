@@ -17,6 +17,8 @@ import explorerTypes from '../../utils/content/explorerTypes'
 
 // API
 import api from '../../Services/api';
+import Spinner from '../../components/Spinner/spinner';
+import Capitalize from '../../utils/Captalize';
 
 interface dataProps {
   id: number,
@@ -82,6 +84,12 @@ const Explorar: React.FC = () => {
   React.useEffect(() => {
     getSearchContentOnBackend(debounceSearch)
   }, [debounceSearch])
+
+  React.useEffect(() => {
+    setTimeout(() => {
+      const firstButton = document.getElementById('FIRST-BUTTON')?.click()
+    }, 50)
+  }, [dataOfType])
   
   return <Container>
     <ExplorerContainer numberOfCategories={numberOfCategories}>
@@ -91,13 +99,14 @@ const Explorar: React.FC = () => {
         return <Button 
           label={ String( category[0] ) }
           goTo="#" 
-          handleClick={() => {
-            
-            getContentOnBackendByCategory({category: category[2], type: dataOfType.type[1]})
-          }
-          }
+          handleClick={() => getContentOnBackendByCategory({
+            category: category[2],
+            type: dataOfType.type[1]
+          })}
+          
           active={clicked === category[2]}
           key={index}
+          id={index === 0 ? 'FIRST-BUTTON' : 'false'}
           />}
          )
         }
@@ -121,7 +130,7 @@ const Explorar: React.FC = () => {
         </div>
 
         <div id="search-large">
-          <span>{title || 'Escolha uma categoria a cima'}</span>
+          <span>{Capitalize(title) || 'Escolha uma categoria a cima'}</span>
           <div id="search-lenguage-input-container">
               <input type="text" placeholder="Digite aqui" id="search-input" value={search} 
                 onChange={({target}) => setSearch(target.value)}
@@ -130,11 +139,11 @@ const Explorar: React.FC = () => {
           </div>
         </div>
 
-        <Box>
+        { data ? <Box>
           {
-            data && (data.map(content => <Card image={[content.url, content.url]} title={content.title} description={content.desc} modal/>))  
+            (data.map(content => <Card image={[content.url, content.url]} title={content.title} description={content.desc} modal/>)) 
           }
-      </Box>
+      </Box> : <Spinner />}
 
       </ExplorerMain>
     </ExplorerContainer>

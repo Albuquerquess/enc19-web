@@ -38,6 +38,7 @@ export const ModalContainer = styled.div<styleModalProps>`
     }
 
     div#modal-content {
+      align-self: baseline;
       p#modal-content-title {
         font-size: 1.6rem;
         font-weight: 700;

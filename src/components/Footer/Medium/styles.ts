@@ -79,7 +79,7 @@ export const FooterContainer = styled.div<FooterContainerProps>`
 
     div#col-3 {
       display: flex;
-      align-items: center;
+      align-items: flex-end;
       justify-content: center;
       span {
         padding-bottom: 1rem

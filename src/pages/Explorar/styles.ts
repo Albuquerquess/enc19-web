@@ -85,6 +85,7 @@ export const ExplorerMain = styled.div<ExplorerMainProps>`
         img {    
               height: 3.5rem;
               position: absolute;
+              right: 1rem;
             }
     }
 

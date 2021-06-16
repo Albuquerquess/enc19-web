@@ -10,6 +10,7 @@ import { LastCase } from './styles';
 import api from '../../Services/api';
 import Card from '../../components/Card';
 import axios from 'axios';
+import Spinner from '../../components/Spinner/spinner';
 
 interface dataProps {
   id: number,
@@ -93,7 +94,7 @@ const Home: React.FC = () => {
     setLastCovidData({
       confirmed: {
         quantidade: confirmedCases.data[0].quantidade,
-        label: 'Casos Confirmados'
+        label: 'Casos confirmados'
       },
       dead: {
         quantidade: deadCases.data[0].quantidade,
@@ -114,43 +115,45 @@ const Home: React.FC = () => {
 
   return <Container>
       
+          <Box title="Últimas publicações">
         {
-          allOk && (
-            <Box title="Últimas publicações">
-              <Card image={[graph.url, graph.url]} title={graph.title} description={graph.desc} modal />
-              <Card image={[map.url, map.url]} title={map.title} description={map.desc} modal />
-              <Card image={[infograph.url, infograph.url]} title={infograph.title} description={infograph.desc} modal />
+              allOk ? <>
+              { graph.url ? <Card image={[graph.url, graph.url]} title={graph.title} description={graph.desc} modal /> : <Spinner />}
+              { map.url ? <Card image={[map.url, map.url]} title={map.title} description={map.desc} modal /> : <Spinner />}
+              { infograph.url ? <Card image={[infograph.url, infograph.url]} title={infograph.title} description={infograph.desc} modal /> : <Spinner />}
+              </> : <Spinner />
+            }
             </Box>
-          )
-        }
 
 
       <Box title="Atualizações diárias">
-        {
-          lastCovidData && <>
-            <Background>
+        <Background>
           <LastCase>
-            <img src={casosConfirmados} alt="CASOS CONFIRMADOS"/>
-            <span className="title">Casos confirmados:</span>
-            <span className="value">{lastCovidData?.confirmed.quantidade}</span>
+            {lastCovidData ? <>
+              <img src={casosConfirmados} alt="CASOS CONFIRMADOS"/>
+              <span className="title">{lastCovidData.confirmed.label}</span>
+              <span className="value">{lastCovidData?.confirmed.quantidade}</span>
+            </> : <Spinner />}
           </LastCase>
         </Background>
         <Background>
         <LastCase>
-            <img src={curados} alt="CURADOS"/>
-            <span className="title">{lastCovidData?.recovered.label}</span>
-            <span className="value">{lastCovidData?.recovered.quantidade}</span>
+        {lastCovidData ? <>
+              <img src={curados} alt="CASOS CONFIRMADOS"/>
+              <span className="title">{lastCovidData.recovered.label}</span>
+              <span className="value">{lastCovidData?.recovered.quantidade}</span>
+            </> : <Spinner />}
           </LastCase>
         </Background>
         <Background>
         <LastCase>
-            <img src={mortes} alt="MORTES"/>
-            <span className="title">{lastCovidData?.dead.label}</span>
-            <span className="value">{lastCovidData?.dead.quantidade}</span>
+        {lastCovidData ? <>
+              <img src={mortes} alt="CASOS CONFIRMADOS"/>
+              <span className="title">{lastCovidData.dead.label}</span>
+              <span className="value">{lastCovidData?.dead.quantidade}</span>
+            </> : <Spinner />}
           </LastCase>
         </Background>
-          </>
-        }
       </Box>
 
   </Container>

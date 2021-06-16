@@ -87,7 +87,7 @@ const Explorar: React.FC = () => {
 
   React.useEffect(() => {
     setTimeout(() => {
-      const firstButton = document.getElementById('FIRST-BUTTON')?.click()
+      document.getElementById('FIRST-BUTTON')?.click()
     }, 50)
   }, [dataOfType])
   

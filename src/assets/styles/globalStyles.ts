@@ -17,7 +17,21 @@ const GlobalStyles = createGlobalStyle`
         font-size: 62.5%;
         font-family: 'Roboto';
         overflow-x: hidden;
-     }
+
+        body::-webkit-scrollbar {
+        width: .6rem;               /* width of the entire scrollbar */
+        }
+
+        body::-webkit-scrollbar-track {
+        background: none; // Background
+        }
+
+        body::-webkit-scrollbar-thumb {
+        background-color: #505050;
+        border-radius: 2rem;       /* roundness of the scroll thumb */
+        border: .3rem solid #505050;
+        }
+            }
 
      body { 
       background-color: #000;

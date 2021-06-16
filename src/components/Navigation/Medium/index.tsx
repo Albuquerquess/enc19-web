@@ -19,6 +19,10 @@ import aboutActiveIcon from '../../../assets/common/pageIcons/Sobre - ativo.svg'
 import { Link, useLocation } from 'react-router-dom';
 import pageNames from '../../../utils/content/pageNames';
 
+// Capitalize
+import Capitalize from '../../../utils/Captalize';
+
+
 const NavigationMedium: React.FC = () => {
   const currentPathName = useLocation().pathname
   console.log('currentPathName -- ', currentPathName)
@@ -28,7 +32,7 @@ const NavigationMedium: React.FC = () => {
   return <Container>
       <NavigationContainer currentPathName={currentPathName}>
         <span id="navigation-title">
-            {pageName}
+            {Capitalize(pageName)}
         </span>
         <nav id="navigation-icon-group">
             <Link to="/home">

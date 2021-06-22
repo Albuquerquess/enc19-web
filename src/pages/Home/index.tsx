@@ -87,9 +87,10 @@ const Home: React.FC = () => {
   }
 
   const getLastsCovidDataOnIntegrasus = async () => {
-    const confirmedCases = await axios.get('https://indicadores.integrasus.saude.ce.gov.br/api/coronavirus/qtd-confirmados?dataInicio=2020-01-01&dataFim=2021-05-14&minDate=2020-01-01&maxDate=2021-05-14&tipo=Confirmados&idMunicipio=&idRegiaoSaude=&idMacrorregiao=&casosHospitalizados=false&casosProfissionais=false&casosIndigenas=false&casosEstudante=false')
-    const recoveredCases = await axios.get('https://indicadores.integrasus.saude.ce.gov.br/api/coronavirus/qtd-recuperados?dataInicio=2020-01-01&dataFim=2021-05-14&minDate=2020-01-01&maxDate=2021-05-14&tipo=Confirmados&idMunicipio=&idRegiaoSaude=&idMacrorregiao=&casosHospitalizados=false&casosProfissionais=false&casosIndigenas=false&casosEstudante=false')
-    const deadCases = await axios.get(' https://indicadores.integrasus.saude.ce.gov.br/api/coronavirus/qtd-obitos?dataInicio=2020-01-01&dataFim=2021-05-14&minDate=2020-01-01&maxDate=2021-05-14&tipo=Confirmados&idMunicipio=&idRegiaoSaude=&idMacrorregiao=&casosHospitalizados=false&casosProfissionais=false&casosIndigenas=false&casosEstudante=false')
+
+    const confirmedCases = await axios.get(String(process.env.REACT_APP_INFECTADOS))
+    const recoveredCases = await axios.get(String(process.env.REACT_APP_RECUPERADOS))
+    const deadCases = await axios.get(String(process.env.REACT_APP_MORTOS))
     
     setLastCovidData({
       confirmed: {

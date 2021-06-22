@@ -46,10 +46,7 @@ const Explorar: React.FC = () => {
   const [search, setSearch] = React.useState('')
   const [data, setData] = React.useState<dataProps[]>([])
   const [clicked, setClicked] = React.useState<String>('')
-  const [title, setTitle] = React.useState<String>('')
-  const [type, setType] = React.useState<String>('')
-  const [category, setCategory] = React.useState<String>('')
-  
+  const [title, setTitle] = React.useState<String>('')  
 
   const debounceSearch = useDebounce(search, 1000)
 

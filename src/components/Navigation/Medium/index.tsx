@@ -25,9 +25,7 @@ import Capitalize from '../../../utils/Captalize';
 
 const NavigationMedium: React.FC = () => {
   const currentPathName = useLocation().pathname
-  console.log('currentPathName -- ', currentPathName)
   const pageName = (pageNames[currentPathName]).toLowerCase()
-  console.log('pageName -- ',pageName)
 
   return <Container>
       <NavigationContainer currentPathName={currentPathName}>

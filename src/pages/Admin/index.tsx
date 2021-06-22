@@ -9,7 +9,7 @@ import { AdminContainer, AdminForm } from './styles';
 
 const Admin: React.FC = () => {
     const [type, setType] = React.useState('')
-    const [category, setCategory] = React.useState('graficos')
+    const [category, setCategory] = React.useState('')
     const [title, setTitle] = React.useState('')
     const [desc, setDesc] = React.useState('')
     const [date, setDate] = React.useState(new Date().toISOString().split('T')[0])
@@ -50,6 +50,10 @@ const Admin: React.FC = () => {
             
     }
 
+    React.useEffect(() => {
+        console.log({category, type})
+    }, [category, type])
+
 return <Container>
     <Notification display={notificationDisplay} label={notificationLabel} />
       <AdminContainer>
@@ -85,9 +89,9 @@ return <Container>
                     value={category}
                     onChange={({target}) => setCategory(target.value)}
                     required >
+                        <option selected>Escolha uma categoria</option>
                     
                     {exploreTypes[type] && exploreTypes[type].categories.map((category: String[], index: Number) => {
-                        console.log(category[0])
                         return <option value={String(category[2])}>{category[0]}</option>
                     })}
                 </select>

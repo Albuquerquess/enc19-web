@@ -36,7 +36,7 @@ const Sidebar: React.FC<sidebarProps> = ({active, setActive}) => {
                     </Link>
                 </li>
                 <li className="sidebar-page-icon">
-                    <Link to="/dashboard">
+                    <Link to="#">
                         <img src={dashboardActiveIcon} alt="Home"/>
                         <span>Dashboard</span>
                     </Link>

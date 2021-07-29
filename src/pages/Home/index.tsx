@@ -133,7 +133,7 @@ const Home: React.FC = () => {
             {lastCovidData ? <>
               <img src={casosConfirmados} alt="CASOS CONFIRMADOS"/>
               <span className="title">{lastCovidData.confirmed.label}</span>
-              <span className="value">{lastCovidData?.confirmed.quantidade}</span>
+              <span className="value">{lastCovidData?.confirmed.quantidade.toLocaleString()}</span>
             </> : <Spinner />}
           </LastCase>
         </Background>
@@ -142,7 +142,7 @@ const Home: React.FC = () => {
         {lastCovidData ? <>
               <img src={curados} alt="CASOS CONFIRMADOS"/>
               <span className="title">{lastCovidData.recovered.label}</span>
-              <span className="value">{lastCovidData?.recovered.quantidade}</span>
+              <span className="value">{lastCovidData?.recovered.quantidade.toLocaleString()}</span>
             </> : <Spinner />}
           </LastCase>
         </Background>
@@ -151,7 +151,7 @@ const Home: React.FC = () => {
         {lastCovidData ? <>
               <img src={mortes} alt="CASOS CONFIRMADOS"/>
               <span className="title">{lastCovidData.dead.label}</span>
-              <span className="value">{lastCovidData?.dead.quantidade}</span>
+              <span className="value">{lastCovidData?.dead.quantidade.toLocaleString()}</span>
             </> : <Spinner />}
           </LastCase>
         </Background>

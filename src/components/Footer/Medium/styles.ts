@@ -81,7 +81,7 @@ export const FooterContainer = styled.div<FooterContainerProps>`
       display: flex;
       align-items: flex-end;
       justify-content: center;
-      span {
+      a {
         padding-bottom: 1rem
       }
     }
@@ -111,6 +111,10 @@ export const FooterContainer = styled.div<FooterContainerProps>`
       div#developers {
         span:first-child {
           margin-right: 1rem;
+        }
+
+        span > a {
+          font-weight: bold;
         }
       }
     }

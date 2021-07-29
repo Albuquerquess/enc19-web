@@ -19,33 +19,32 @@ const FooterMedium: React.FC = () => {
             <img src={logo} alt="ENC19"/>
             <p id="desc">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata</p>
             <div id="social-media">
-              <a href="#"><img src={facebook} alt="Facebook" /></a>
-              <a href="#"><img src={instagram} alt="Instagram" /></a>
-              <a href="#"><img src={twitter} alt="Twitter" /></a>
+              <a href="https://www.facebook.com/geografia.licenciatura.948" target="_blank"><img src={facebook} alt="Facebook" /></a>
+              <a href="https://www.instagram.com/geografiaiguatu/" target="_blank"><img src={instagram} alt="Instagram" /></a>
             </div>
         </div>
         <div id="col-2">
             <ol>
-              <li><Link to="#">HOME</Link></li>
-              <li><Link to="#">INFOGRÁFICOS</Link></li>
-              <li><Link to="#">GRÁFICOS</Link></li>
-              <li><Link to="#">MAPAS</Link></li>
-              <li><Link to="#">DASHBOARD</Link></li>
-              <li><Link to="#">SOBRE</Link></li>
+              <li><Link to="/home">HOME</Link></li>
+              <li><Link to="/explorar/infografico">INFOGRÁFICOS</Link></li>
+              <li><Link to="/explorar/grafico">GRÁFICOS</Link></li>
+              <li><Link to="/explorar/mapa">MAPAS</Link></li>
+              <li><Link to="/explorar/infografico">DASHBOARD</Link></li>
+              <li><Link to="/sobre">SOBRE</Link></li>
             </ol>
         </div>
         <div id="col-3">
-          <span>INTEGRASUS</span>
-          <span>MINISTÉRIO DA SAUDE</span>
-          <span>IFCE IGUATU</span>
+          <a href="https://integrasus.saude.ce.gov.br/#/home" target="_blank">INTEGRASUS</a>
+          <a href="https://www.gov.br/saude/pt-br" target="_blank">MINISTÉRIO DA SAUDE</a>
+          <a href="https://ifce.edu.br/iguatu/imagens/galeria_fotos/album" target="_blank">IFCE IGUATU</a>
         </div>
       </div>
       <div id="copy">
         <div id="wrapper">
           <span>2020 Copyright: <strong>ENC-19</strong></span>
           <div id="developers">
-            <span>Projeto: <strong>Jonathan Weslley</strong></span>
-            <span>Desenvolvimento: <strong>Gustavo Albuquerque</strong></span>
+            <span>Projeto: <a target="_blank" href="">Jonathan Weslley</a></span>
+            <span>Desenvolvimento e Infraestrutura: <a target="_blank" href="https://wa.me/message/EVJPT6VSSMRPD1">Gustavo Albuquerque</a></span>
           </div>
         </div>
       </div>

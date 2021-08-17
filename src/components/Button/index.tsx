@@ -5,7 +5,7 @@ import { StyledButtom } from './styles';
 
 interface buttonProps {
     label: string;
-    goTo: string;
+    goTo?: string;
     background?: string;
     active?: boolean;
     handleClick?: () => any;
@@ -13,7 +13,7 @@ interface buttonProps {
 
 const Button: React.FC<buttonProps> = ({label, goTo, background, active, handleClick }) => {
   return <StyledButtom background={background} active={active} key={label} onClick={handleClick}>
-    <Link to={goTo} >
+    <Link to={goTo || '#'} >
       {label}
     </Link>
   </StyledButtom>

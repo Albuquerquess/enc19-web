@@ -1,0 +1,8 @@
+## Endpoints
+
+- Dados de todos os ESTADO
+https://api.brasil.io/v1/dataset/covid19/caso/data/?is_last=True&place_type=state
+
+- Dados de um das CIDADES de um ESTADO específico 
+https://brasil.io/api/dataset/covid19/caso/data/?is_last=True&state=AL
+

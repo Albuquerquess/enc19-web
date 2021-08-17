@@ -5,16 +5,16 @@ import { StyledButtom } from './styles';
 
 interface buttonProps {
     label: string;
-    goTo: string;
+    goTo?: string;
     background?: string;
     active?: boolean;
     handleClick?: () => any;
     id?: string 
 }
 
-const Button: React.FC<buttonProps> = ({label, goTo, background, active, handleClick, id }) => {
-  return <StyledButtom background={background} active={active} key={label} onClick={handleClick} id={id ? id : 'button'}>
-    <Link to={goTo} >
+const Button: React.FC<buttonProps> = ({label, goTo, background, active, handleClick }) => {
+  return <StyledButtom background={background} active={active} key={label} onClick={handleClick}>
+    <Link to={goTo || '#'} >
       {label}
     </Link>
   </StyledButtom>

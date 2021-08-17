@@ -33,24 +33,13 @@ const NavigationMedium: React.FC = () => {
             {Capitalize(pageName)}
         </span>
         <nav id="navigation-icon-group">
-            <Link to="/home">
-              <img src={pageName === 'home' ? homeActiveIcon: homeIcon} alt="HOME" />
-            </Link>
-            <Link to="/explorar/infografico">
-              <img src={pageName === 'infográficos' ? infographActiveIcon: infographIcon} alt="INFOGRÁFICOS" />
-            </Link>
-            <Link to="/explorar/grafico">
-              <img src={pageName === 'gráficos' ? graphActiveIcon: graphIcon} alt="GRÁFICOS" />
-            </Link>
-            <Link to="/explorar/mapa">
-              <img src={pageName === 'mapas' ? mapActiveIcon: mapIcon} alt="MAPAS" />
-            </Link>
-            <Link to="#" >
-              <img src={pageName === 'Dashboard' ? dashboardActiveIcon: dashboardIcon} alt="DASHBOARD" style={{cursor: 'alias'}} />
-            </Link>
-            <Link to="/sobre">
-              <img src={pageName === 'sobre' ? aboutActiveIcon: aboutIcon} alt="SOBRE" />
-            </Link>
+            <Link to="/home"><img src={pageName === 'Home' ? homeActiveIcon: homeIcon} alt="HOME" onClick={() => {}} /></Link>
+            <Link to="/explorar/infograficos"><img src={pageName === 'Infográficos' ? infographActiveIcon: infographIcon} alt="INFOGRÁFICOS" onClick={() => {}} /></Link>
+            <Link to="/explorar/graficos"><img src={pageName === 'Gráficos' ? graphActiveIcon: graphIcon} alt="GRÁFICOS" onClick={() => {}} /></Link>
+            <Link to="/explorar/mapas"><img src={pageName === 'Mapas' ? mapActiveIcon: mapIcon} alt="MAPAS" onClick={() => {}} /></Link>
+            <Link to="/dashboard/mundo"><img src={pageName === 'Dashboard' ? dashboardActiveIcon: dashboardIcon} alt="DASHBOARD" onClick={() => {}} /></Link>
+            <Link to="/sobre"><img src={pageName === 'Sobre' ? aboutActiveIcon: aboutIcon} alt="SOBRE" onClick={() => {}} /></Link>
+
         </nav>
       </NavigationContainer>
   </Container>;

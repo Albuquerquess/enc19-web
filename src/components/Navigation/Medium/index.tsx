@@ -34,7 +34,7 @@ const NavigationMedium: React.FC = () => {
             <Link to="/explorar/infograficos"><img src={pageName === 'Infográficos' ? infographActiveIcon: infographIcon} alt="INFOGRÁFICOS" onClick={() => {}} /></Link>
             <Link to="/explorar/graficos"><img src={pageName === 'Gráficos' ? graphActiveIcon: graphIcon} alt="GRÁFICOS" onClick={() => {}} /></Link>
             <Link to="/explorar/mapas"><img src={pageName === 'Mapas' ? mapActiveIcon: mapIcon} alt="MAPAS" onClick={() => {}} /></Link>
-            <Link to="/dashboard"><img src={pageName === 'Dashboard' ? dashboardActiveIcon: dashboardIcon} alt="DASHBOARD" onClick={() => {}} /></Link>
+            <Link to="/dashboard/mundo"><img src={pageName === 'Dashboard' ? dashboardActiveIcon: dashboardIcon} alt="DASHBOARD" onClick={() => {}} /></Link>
             <Link to="/sobre"><img src={pageName === 'Sobre' ? aboutActiveIcon: aboutIcon} alt="SOBRE" onClick={() => {}} /></Link>
 
         </nav>

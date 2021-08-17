@@ -29,7 +29,7 @@ const Routes: React.FC = () => {
         <Route exact path="/" component={Welcome}/>
         <Route exact path="/home" component={Home}/>
         <Route exact path="/explorar/:type" component={Explorar}/>
-        <Route exact path="/dashboard" component={Dashboard}/>
+        <Route exact path="/dashboard/:type" component={Dashboard}/>
         <Route exact path="*" component={NotFound} />
       </Switch>
       <FooterSmall />

@@ -1,77 +1,67 @@
-import React, { useEffect, useState } from 'react';
-import Box from '../../components/Box';
-import Button from '../../components/Button';
+import React from 'react';
+import { useLocation } from 'react-router';
+// components
 import Container from '../../components/Container';
+import Button from '../../components/Button';
+// services
+import CoronaSpider from '../../Services/spiders/CoronaSpider';
+// chartjs
+import { Bar } from 'react-chartjs-2'
+// types
+import { getAllStatesDataReturn } from '../../types/coronaSpideer'
+// styles
+import { DashboardContainer } from './styles'
 
-import { DashboardContainer } from './styles';
-
-// Charts
-import { LineChart, ResponsiveContainer } from 'recharts';
-
-
-// Spyder
-import coronaSpider from '../../Services/spiders/CoronaSpider'
-
-const CoronaSpider = new coronaSpider()
-
-interface WorldAllCasesRequestProps {
-  Global: {
-      NewConfirmed: Number;
-      TotalConfirmed: Number;
-      NewDeaths: Number;
-      TotalDeaths: Number;
-      NewRecovered: Number;
-      TotalRecovered: Number;
-  }
-  Countries: { 
-      Country: String;
-      CountryCode: String;
-      Date: String;
-      TotalConfirmed: Number;
-      TotalDesths: Number;
-      TotalRecovered: Number
-  }
+const options = {
+  indexAxis: 'y',
+  elements: {
+    bar: {
+      borderWidth: 2,
+    },
+  },
+  responsive: true,
+  plugins: {
+    legend: {
+      position: 'right',
+    },
+  },
 }
 
 const Dashboard: React.FC = () => {
-  const [worldAllCasesRequest, setWorldAllCasesRequest] = React.useState<WorldAllCasesRequestProps>()
   
-  CoronaSpider.makeWorldAllCasesRequest().then(response => {
-    
-    setWorldAllCasesRequest(response)
-    console.log(typeof worldAllCasesRequest)
-  })
-
-  // CoronaSpider.makeCEConfirmedRequest().then(response => console.log('CE Confirmados - ',response))
-  // CoronaSpider.makeCEDesthsRequest().then(response => console.log('CE Mortos - ',response))
-  // CoronaSpider.makeCERecoveredsRequest().then(response => console.log('CE Recuperados - ',response))
-  // CoronaSpider.makeBrazilAllCasesRequest().then(response => console.log('BRASIL - ', response.deceased))
-  // CoronaSpider.makeWorldAllCasesRequest().then(response => console.log('Mundo - ', response.Countries.Country))
-
+  const [data, setData] = React.useState<getAllStatesDataReturn[]>([])
+  const [currentChartType, setCurrentChartType] = React.useState('ceara')
   
+  const coronaSpider = new CoronaSpider();
+  
+  const coronaSpiderMethods: {[index: string]:any} = {
+    'mundo': coronaSpider.getAllStatesCovidData(),
+    'brasil': coronaSpider.getAllStatesCovidData(),
+    'ceara': coronaSpider.getCearaCovidData()
+  }
+  
+  async function getChart(type: string) {
+    setData([])
+    const data = await coronaSpiderMethods[type]
+    setData(data)
+  }
 
+  React.useEffect(() => {
+    getChart(currentChartType)
+  }, [currentChartType])
 
   return <Container>
     <DashboardContainer>
-      
       <div id="button-container">
-        <Button label="Mundo" goTo="" />
-        <Button label="Brasil" goTo="" />
-        <Button label="Ceará" goTo="" />
+        <Button label='Mundo' active={currentChartType === 'mundo'}  handleClick={() => setCurrentChartType('mundo')}/>
+        <Button label='Brasil' active={currentChartType === 'brasil'}  handleClick={() => setCurrentChartType('brasil')}/>
+        <Button label='Ceará' active={currentChartType === 'ceara'}  handleClick={() => setCurrentChartType('ceara')}/>
       </div>
-
-      <Box title="Mundo" subtitle="Casos Confirmados">
-        {/* <ResponsiveContainer>
-          <LineChart data={worldAllCasesRequest}>
-
-        </LineChart>
-        </ResponsiveContainer> */}
-      </Box>
-      <Box subtitle="Óbitos Confirmados">
-
-      </Box>
+      {data ? data.map(chart => <section className="chart-wrapepr">
+        <Bar data={chart} options={options}/>
+        </section>) : ''}
     </DashboardContainer>
-  </Container>
+  </Container>;
 }
 
 export default Dashboard;

@@ -38,6 +38,7 @@ interface getContentOnBackendByCategoryProps {
 const Explorar: React.FC = () => {
   const pathname = useLocation().pathname.split('/')
   const currentType = pathname[pathname.length - 1]
+  console.log(currentType)
   const dataOfType = explorerTypes[currentType]
   const numberOfCategories = dataOfType.categories.length
     

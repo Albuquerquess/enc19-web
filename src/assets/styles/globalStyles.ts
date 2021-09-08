@@ -14,7 +14,7 @@ const GlobalStyles = createGlobalStyle`
 
         --size-container: 1100px;
 
-        font-size: 62.5%;
+        font-size: 62.5% !important;
         font-family: 'Roboto';
         overflow-x: hidden;
 
@@ -38,9 +38,9 @@ const GlobalStyles = createGlobalStyle`
       
       color: var( --color-text);
       
-      font-size: 1.6rem;        
-      letter-spacing: .03rem;
-      line-height: 2.4rem;
+      font-size: 1.6rem !important;        
+      letter-spacing: .03rem !important;
+      line-height: 2.4rem !important;
 
       input[type=text] {
         padding: 0 1rem;

@@ -4,9 +4,9 @@ const pageNames: {[index: string]:any} = {
    '/dashboard/mundo': 'Dashboard - Mundo',
    '/dashboard/brasil': 'Dashboard - Brasil',
    '/dashboard/ceara': 'Dashboard - Ceará',
-   '/explorar/graficos': 'Gráficos',
-   '/explorar/infograficos': 'Infográficos',
-   '/explorar/mapas': 'Mapas',
+   '/explorar/grafico': 'Gráficos',
+   '/explorar/infografico': 'Infográficos',
+   '/explorar/mapa': 'Mapas',
    '/sobre': 'Sobre',
    '/admin': 'Admin',
 }

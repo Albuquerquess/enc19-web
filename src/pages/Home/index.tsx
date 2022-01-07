@@ -127,7 +127,7 @@ const Home: React.FC = () => {
             </Box>
 
 
-      <Box title="Atualizações diárias">
+      <Box title="Atualizações diárias" subtitle="Referente ao estado do Ceará">
         <Background>
           <LastCase>
             {lastCovidData ? <>

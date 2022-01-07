@@ -29,20 +29,14 @@ const FooterSmall: React.FC = () => {
             <hr/>
             <div id="contacts">
                 <strong className="title">Contatos</strong>
-                <span id="contact" >Design: johnw3s@gmail.com</span>
-                <span id="contact" >Programador: contato@albuquerquedev.com.br</span>
-                <span id="contact" >Geógrafo: leandrolimaisf@gmail.com</span>
+                <span id="contact" ><strong>Design:</strong> <a target="_blank" href="https://www.behance.net/johnw3s">Jonathan Weslley</a></span>
+                <span id="contact" ><strong>Desenvolvimento e Infraestrutura:</strong> <a target="_blank" href="https://wa.me/message/EVJPT6VSSMRPD1">Gustavo Albuquerque</a></span>
             </div>
             <div id="utils">
                 <strong className="title">Links úteis</strong>
-                <a href="#" id="link" >Integrasus</a>
-                <a href="#" id="link" >Ministério da Saúde</a>
-                <a href="#" id="link" >IFCE Iguatú</a>
-            </div>
-            <div id="suggestions">
-                <strong className="title">Sujestões</strong>
-                <a href="#" id="suggestion" >Sugerir análise</a>
-                <a href="#" id="suggestion" >Sugerir funcionalidade</a>
+                <a href="https://integrasus.saude.ce.gov.br/#/home" target="_blank" id="link" >Integrasus</a>
+                <a href="https://www.gov.br/saude/pt-br" target="_blank" id="link" >Ministério da Saúde</a>
+                <a href="https://ifce.edu.br/iguatu" target="_blank" id="link" >IFCE Iguatú</a>
             </div>
             <p id="copy">2020 Copyright: <strong>ENC19.</strong></p>
 
